@@ -30,8 +30,7 @@ Other Tutorials/Guids
 
 Let's make sure that our tools are properly setup and we are configured to run on devnet NOT mainnet. Devnet is free to use and you can issue tokens, if you run on mainnet you'd better know what you're doing
 
-####
-Install the CLI
+### Install the CLI
 ```
 > sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
 downloading stable installer
@@ -45,7 +44,9 @@ Configure the CLI to use `devnet`
 > solana config set --url https://api.devnet.solana.com
 ```
 
-Create an account
+## Create an account/wallet
+We skip the BIP39 password since it's just a test
+
 ```
 > solana-keygen new
 Generating a new keypair
@@ -65,7 +66,35 @@ Save this seed phrase and your BIP39 passphrase to recover your new keypair:
 here are some words that are your actual seed phrase which you should never give to anyone
 ========================================================================
 ```
+
+This is our Account, commonly referred to as a wallet. Let's get the public address and then view it on the Solana Block Explorer
+
+```
+solana-keygen pubkey /Users/jscott/.config/solana/id.json
+G3mqR8ovgG1AVPw432zXUxWU8R5iqQ96pxfCPmvekg4Q
+```
 Let's take a look on the block explorer [here](https://explorer.solana.com/address/G3mqR8ovgG1AVPw432zXUxWU8R5iqQ96pxfCPmvekg4Q?cluster=devnet)
+
+### Fund the account
+
+Now let's airdrop some SOL into our wallet. On devnet, we can just do this ourselves and send SOL to our wallet.
+
+```
+> solana airdrop 1
+Requesting airdrop of 1 SOL
+
+Signature: dZcHW3TNGEtTATse79u6divZndL15Ka7sR3afcasSjokDdPQ4vAQDKcZBJgKQsGv9dA3yovctUwRmRdBySThDg4
+
+1 SOL
+```
+
+Now we have 1 SOL, probably nothing. 
+
+We can check our account on the explorer and see that we now have 1 SOL funded in the account and a transaction in our history. We can [view details](https://explorer.solana.com/tx/dZcHW3TNGEtTATse79u6divZndL15Ka7sR3afcasSjokDdPQ4vAQDKcZBJgKQsGv9dA3yovctUwRmRdBySThDg4?cluster=devnet) of the transaction (shown at the bottom of account page) as well.
+
+
+
+If you connect to a wallet like Phantom/SolFlare/etc. and enter your 
 
 
 jscott:~/solana-tutorials$ solana config get
