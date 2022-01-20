@@ -1,5 +1,16 @@
-## Create an account/wallet
-We skip the BIP39 password since it's just a test
+## Create an Account/Wallet
+ This assumes you've gone though the setup [here](README.md). Now we'll create a wallet where the keypair is stored on our local machine. This will all use devnet so double check you're on devnet. Below, make sure that the `RPC URL` and `WebSocket URL` are on `devnet` not `mainnet`.
+ 
+ ```
+ solana config get
+Config File: /Users/jscott/.config/solana/cli/config.yml
+RPC URL: https://api.devnet.solana.com
+WebSocket URL: wss://api.devnet.solana.com/ (computed)
+Keypair Path: /Users/jscott/.config/solana/id.json
+Commitment: confirmed
+```
+
+ We skip the BIP39 password below since it's just a test.
 
 ```
 > solana-keygen new
@@ -65,5 +76,3 @@ Signature: 34M38y6S1bxvy3ueUzeUW7mBkyDqe9Y6Fs2ZQNXRXst6mwzsid938D9VqGHu77HtFSzUL
 
 On the [block explorer](34M38y6S1bxvy3ueUzeUW7mBkyDqe9Y6Fs2ZQNXRXst6mwzsid938D9VqGHu77HtFSzULRExcifqkjnfcJTBNBWh) we note that this is a transaction whereas the other links we viewed were Accounts. At the bottom (Account inputs) we note that our first account was debited `-◎1.000005` SOL, with `◎0.000005` taken as the transaction fee.
 
-## Tutorials
-* [Create a Wallet/Account, Fund It, Txfer Wallet2Wallet (devnet)](create_account.md)
