@@ -9,6 +9,7 @@ The Solana Program Library is a set of on-chain programs. An SPL token is a toke
 ### Terms
 
 * ACCOUNT, commonly referred to as your wallet, it is identified by a hash string such as `G3mqR8ovgG1AVPw432zXUxWU8R5iqQ96pxfCPmvekg4Q`
+* SPL Token - A token that is 
 
 ### Useful Links
 
@@ -48,3 +49,4 @@ Configure the CLI to use `devnet`
 
 ## Tutorials
 * [Create a Wallet/Account, Fund It, Txfer Wallet2Wallet (devnet)](create_account.md)
+* [Create Our Own SPL Token and Send to a wallet](spl_token.md)
